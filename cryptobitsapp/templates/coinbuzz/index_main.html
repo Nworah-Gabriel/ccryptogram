@@ -1,0 +1,669 @@
+{% extends 'coinbuzz/base.html' %}
+{% load static %}
+  {% block content %}
+ 
+  </div>
+    <!-- slider-area start -->
+    <div class="slider-area slider-area2">
+        <div class="slider-active owl-carousel">
+            <div class="slider-items">
+                <img src="{% static 'statics1/assets/images/slider/1.jpg' %}" alt="" class="slider">
+                <div class="slider-content flex-style text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2><span>We Are </span>The Ccryptogram Agency</h2>
+                                <p>Earn today with ccryptogram and make more out of just sitting at home.</p>
+                                <ul>
+                                    <li><a href="{% url 'about' %}">Read more</a></li>
+                                    <li><a href="{% url 'testimony' %}">testimonies</a></li>
+                                    <li><a href="{% url 'login' %}">JOIN NOW</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-items">
+                <img src="{% static 'statics1/assets/images/slider/1.jpg' %}" alt="" class="slider">
+                <div class="slider-content flex-style">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-center col-12">
+                                <h2><span>We Are </span>Your Ccryptogram Agency</h2>
+                                <p>We are Assisting you to grow your business to build and diversify markets and to increase your ability to successfully engage the global economy and earn massively through bitcoin investments trading. We are the largest minning company and that's why we are everyone's cryptocurrency agency.</p>
+                                <ul>
+                                    <li><a href="{% url 'about' %}">Read more</a></li>
+                                    <li><a href="{% url 'testimony' %}">testimonies</a></li>
+                                    <li><a href="{% url 'login' %}">JOIN NOW</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider-area end -->
+
+    <!-- featured-area start -->
+    <div class="featured-area featured-area2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="featured-wrapper">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="featured-wrap">
+                                    <div class="featured-img">
+                                        <img src="{% static 'statics1/assets/images/featured/exonium2.png' %}" style="height:200px;" alt="">
+                                    </div>
+                                    <h2><a href="#">Exonium</a></h2>
+                                    <p>Exonum is your blockchain. It is designed to securely and easily allow you, your company or your government to build a blockchain system that solves your challenges and enjoys the unmatched security of the Bitcoin Blockchain. </br> while also offering the technology’s most attractive features like ease of use and smart contract delivery..
+                                    </p>
+                                    <a href="https://exonum.com/index" class="btn cryptos-btn">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="featured-wrap">
+                                    <div class="featured-img">
+                                        <img src="{% static 'statics1/assets/images/featured/Crystal.jpg' %}" style="height:200px; alt="">
+                                    </div>
+                                    <h2><a href="#">Crystal</a></h2>
+                                    <p>Crystal is a web-based software tool that helps financial institutions and law enforcement manage blockchain investigations. Crystal assists in identification and trace criminal activities, such as extorting payments from victims of ransomware, schemes of anti-money laundering, money transactions in human-trafficking, etc. Crystal helps investigators find evidence and, if necessary, take cases to the court.</p>
+                                    <a href="https://crystalblockchain.com" class="btn cryptos-btn">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="featured-wrap">
+                                    <div class="featured-img">
+                                        <img src="{% static 'statics1/assets/images/featured/antminer.jpg' %}" style="height:200px; alt="">
+                                    </div>
+                                    <h2><a href="#">Ant Miner</a></h2>
+                                    <p>AntMiner, AntPool, Hashnest. Website. bitmain.com. Bitmain Technologies Ltd., or Bitmain, is a privately owned company headquartered in Beijing, China that designs application-specific integrated circuit (ASIC) chips for bitcoin mining.
+                                        Cryptocurrency mining can only succeed if there is a community of miners and enthusiasts, so Bitmain was glad to participate in the Bitcoin2019 conference in San Francisco last week..</p>
+                                        <a href="https://www.bitmain.com/" class="btn cryptos-btn">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="featured-wrap mb-0">
+                                    <div class="featured-img">
+                                        <img src="{% static 'statics1/assets/images/featured/surround.jpg' %}" style="height:200px; alt="">
+                                    </div>
+                                    <h2><a href="#">Surround</a></h2>
+                                    <p>Surround is a platform which enables the entire music entertainment industry to streamline operations through secure transfer of copyright assets, streamlined connectivity as well as better monitoring and management systems. To do so, the platform creates a fully interoperable digital ecosystem for sharing, monetizing intellectual property and enhance economic opportunity by providing transparent trusted data.</p>
+                                    <a href="https://surround.com" class="btn cryptos-btn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- featured-area end -->
+
+    <!-- about-area start -->
+    <div class="featured-content-area position-relative featured-content-area2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="featured-content-images">
+                        <img src="{% static 'statics1/assets/images/mobail.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="featured-content-wrap flex-style">
+                        <h2><span>WHAT IS BITCOIN?
+                            </span>Buy And Sell Bitcoin</h2>
+                        <p>Bitcoin is a cryptocurrency, it is a decentralized digital currency without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without need for intermidiaries. </p>
+                        <ul>
+                            <li><a href="#">JOIN US NOW</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about-area end -->
+
+    <!-- about-area start -->
+    <div class="about-area position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center">
+                        <h2>About Ccryptogram</h2>
+                        <img src="{% static 'statics1/assets/images/line.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="about-img">
+                        <img src="{% static 'statics1/assets/images/about.jpeg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about-content">
+                        <h3>Ccryptogram was founded 2018. The founders of our world-class cryptocurrency company got to know each other by using the same platform for buying and selling Bitcoins. As our cryptocurrency trading company and its user base grew, new trading farms were built up and several additional people hired, specifically programmers and engineers. The current members of our bitcoin trading team come from different scientific disciplines, but our common faith in cryptocurrencies has brought us together. We are all strong believers in the future of digital currencies and we love being part of this growing community!</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3 col-6">
+                            <div class="about-items">
+                                <img src="{% static 'statics1/assets/images/about/icon/1.png' %}" alt="">
+                                <span class="counter">1454</span>
+                                <p>Support Countries</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="about-items">
+                                <img src="{% static 'statics1/assets/images/about/icon/2.png' %}" alt="">
+                                <span class="counter">759</span>
+                                <p>Bank Support</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="about-items mb-0">
+                                <img src="{% static 'statics1/assets/images/about/icon/3.png' %}" alt="">
+                                <span class="counter">1250</span>
+                                <p>BitCoin ATMs</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="about-items mb-0">
+                                <img src="{% static 'statics1/assets/images/about/icon/4.png' %}" alt="">
+                                <span class="counter">2391</span>
+                                <p>Producers Ready</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about-area end -->
+    <!-- service-area start -->
+    <div class="service-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center">
+                        <h2>Why Choose Bitcoin</h2>
+                        <img src="{% static 'statics1/assets/images/line.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="service-wrap">
+                        <h3>What We Offer</h3>
+                        <p>We provide premium access to crypto trading for both individuals and institutions through high liquidity, reliable order execution and constant uptime.</p>
+                        <p>There are many variations of features ccryptogram offers and some of them are.</p>
+                        <a href="#">Free Consultation</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="service-items">
+                        <span class="flaticon-bitcoin-9"></span>
+                        <h3>Order types</h3>
+                        <p>ccryptogram offers a suite of order types to give traders the tools they need for every scenario. Discover more about our most advanced Algorithmic orders types.</p>
+                    </div>
+                    <div class="service-items">
+                        <span class="flaticon-profits"></span>
+                        <h3>Instant Exchange</h3>
+                        <p>ccryptogram offers order books with top tier liquidity, allowing users to easily exchange Bitcoin, Ethereum, EOS, Litecoin, Ripple, NEO and many other digital assets with minimal slippage.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-6 col-12">
+                            <div class="service-items">
+                                <span class="flaticon-exchange-1"></span>
+                                <h3>Secure Wallet</h3>
+                                <p>Security of user information and funds is our first priority. Learn more about our security features and integrations.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-6 col-12">
+                            <div class="service-items">
+                                <span class="flaticon-bitcoin-7"></span>
+                                <h3>Customizable interface</h3>
+                                <p>Organize your workspace according to your needs: compose your layout, choose between themes, and set up notifications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service-area end -->
+
+    <!-- resorce-area start -->
+    <div class="resorce-area bg-2 ptb-120 resorce-area2" style="padding-bottom:20px !important; padding-top:30px !important;">
+        <div class="container">
+            <div style="overflow-x: scroll; width:100%; -ms-overflow-style: none; padding:10px; padding-bottom:20px !important; padding-top:20px !important;" id="trading" >
+                <div class="row">
+                    <div class="tradingview-widget-container" style="margin:20px !important;">
+                        <div id="tradingview_e0224"></div>
+                        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/COINBASE-BTCUSD/" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Chart</span></a> by Ccryptogram</div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                        var x = screen.width;
+                        
+                        if (screen.width<400){
+                           var x = 700;
+                        }
+                        new TradingView.widget(
+                        {
+                        "width":x,
+                        "height": 610,
+                        "symbol": "COINBASE:BTCUSD",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "hotlist": true,
+                        "container_id": "tradingview_e0224"
+                      }
+                        );
+                        </script>
+                      </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- resorce-area end -->
+
+    <!-- expart-area start -->
+    <div class="expart-area expart-area2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 offset-lg-5 col-12">
+                    <div class="expart-wrap">
+                        <h2>We’re a dynamic team of creatives people innovation & Marketing Expert.</h2>
+                        <p>We're a team of digital natives with deep financial expertise, backed by some of the world's most notable investors.</p>
+                        <a href="#">More About <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="expart-img d-none d-lg-block">
+            <img src="{% static 'statics1/assets/images/featured/1.png' %}" alt="">
+        </div>
+    </div>
+    <!-- expart-area end -->
+    <!-- calculate-area start -->
+    <div class="calculate-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="calculate-wrap">
+                        <h2>Bitcoin To Currency Calculator...</h2>
+                        <p>Use Our Crypto Converter to monitor cryptocurrency pairs.</p>
+                        <div class="row">
+                            <div class=>
+            
+                                <div class="currency-calculator mb-15">
+                                    <form action="#" method="post" class="d-flex align-items-center justify-content-center">
+                                        <!-- Calculator Part -->
+                                         <script src="https://cdn.jsdelivr.net/gh/coinponent/coinponent@1.2.6/dist/coinponent.js"></script>
+            
+                                        <coin-ponent shadow="sm" border-radius="2" token="BTC"></coin-ponent> 
+                                        
+            
+                                        <!-- Equal Sign -->
+                                
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- calculate-area start -->
+
+     <!-- .pricing-area start -->
+     <div class="pricing-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center">
+                        <h2>Choose Pricing Plan</h2>
+                        <img src="{% static 'statics1/assets/images/line.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="pricing-menu d-flex justify-content-center">
+                        <li class="buy"><a href="#">Login to network</a></li>
+                        <li><a href="#">our testimonies</a></li>
+                        <li class="btc"><a href="#">Btc</a></li>
+                        <li><a href="#">Eth</a></li>
+                        <li>
+                            <select name="select">
+                                <option value="USD">USD</option>
+                                <option value="BTC">BTC</option>
+                                <option value="ETC">ETC</option>
+                                <option value="TCN">TCN</option>
+                                <option value="USD">USD</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-12" style="background-color:#3fb0ac; padding-top: 0;  padding-bottom: 0; "> 
+                    <div class="pricing-wrap" style=" padding-top: 0; padding-bottom: 0;">
+                        <div style="border-bottom: 3px solid #3fb0ac; margin-right: 14px; margin-left: 14px; text-align: center;">
+                            <h3 style="font-weight: 30px; font-size: 30px;">Mini Plan</h3>
+                        </div>
+                        </br>
+                        <style> </style>
+                       <div style=" line-height:8px; font">
+                            <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                    <span style="font-size: 11px;">Min.</span>&nbsp;$200.00
+                                </span><br>
+                                <center><hr class = "text-center" style="width: 60%; line-height:3px;  border-color:#ff9800;"></center>
+                                <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                        <span style="font-size: 11px;">Max.</span>&nbsp;$499.00
+                                    </span><br>
+                        </div>
+                        <br>
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>3% Hourly Income</h6>
+                            </span><br>
+                        </div>
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>Instant Withdrawal</h6>
+                            </span><br>
+                        </div>
+                    <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>7 Days Life Span</h6>
+                            </span><br>
+                        </div>
+                        
+                        <div style="line-height:8px; text-align: center;" >
+                                <h6 style=" text-align:center; "> 
+                                     <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>Multiple Account Enabled</h6>
+                                </span><br>
+                            </div>
+                            <div style="line-height:8px; text-align: center;" >
+                                    <h6 style=" text-align:center; "> 
+                                         <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>5% WELCOME BONUS</h6>
+                                    </span><br>
+                                </div>
+
+                                            <br>
+                        <button style=" padding-top: 0;  padding-bottom: 0;" onclick="location.href='{% url 'login' %}'">Buy now </button>
+                    </br>
+                
+                        <br>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12" style="background-color:#3fb0ac; padding-   top: 0;  padding-bottom: 0; "> 
+                    <div class="pricing-wrap" style=" padding-top: 0; padding-bottom: 0;">
+                        <div style="border-bottom: 3px solid #3fb0ac; margin-right: 14px; margin-left: 14px; text-align: center;">
+                            <h3 style="font-weight: 30px; font-size: 30px;">Basic Plan</h3>
+                        </div>
+                        </br>
+                        <style> </style>
+                       <div style=" line-height:8px; font">
+                            <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                    <span style="font-size: 11px;">Min.</span>&nbsp;$500.00
+                                </span><br>
+                                <center><hr class = "text-center" style="width: 60%; line-height:3px;  border-color:#ff9800;"></center>
+                                <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                        <span style="font-size: 11px;">Max.</span>&nbsp;$2000.00
+                                    </span><br>
+                        </div>
+                        <br>
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>3% Hourly Income</h6>
+                            </span><br>
+                        </div>
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>10 Days Life span</h6>
+                            </span><br>
+                        </div>
+                    <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>Instant Withdrawal</h6>
+                            </span><br>
+                        </div>
+                        
+                        <div style="line-height:8px; text-align: center;" >
+                                <h6 style=" text-align:center; "> 
+                                     <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>Multiple Account Enabled</h6>
+                                </span><br>
+                            </div>
+                            <div style="line-height:8px; text-align: center;" >
+                                    <h6 style=" text-align:center; "> 
+                                         <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>5% WELCOME BONUS</h6>
+                                    </span><br>
+                                </div>
+
+                                            <br>
+                        <button style=" padding-top: 0;  padding-bottom: 0;" onclick="location.href='{% url 'login' %}'">Buy now </button>
+                    </br>
+                </br>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12" style="background-color:#3fb0ac; padding-top: 0;  padding-bottom: 0; "> 
+                    <div class="pricing-wrap" style=" padding-top: 0; padding-bottom: 0;">
+                        <div style="border-bottom: 3px solid #3fb0ac; margin-right: 14px; margin-left: 14px; text-align: center;">
+                            <h3 style="font-weight: 30px; font-size: 30px;">Standard Plan</h3>
+                        </div>
+                        </br>
+                        <style> </style>
+                       <div style=" line-height:8px; font">
+                            <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                    <span style="font-size: 11px;">Min.</span>&nbsp;$2000.00
+                                </span><br>
+                                <center><hr class = "text-center" style="width: 60%; line-height:3px;  border-color:#ff9800;"></center>
+                                <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                        <span style="font-size: 11px;">Max.</span>&nbsp;$5000.00
+                                    </span><br>
+                        </div>
+                        <br>
+                        
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>5% hourly Income</h6>
+                            </span><br>
+                        </div>
+                    <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>Instant Withdrawal</h6>
+                            </span><br>
+                        </div>
+                        
+                        <div style="line-height:8px; text-align: center;" >
+                                <h6 style=" text-align:center; "> 
+                                     <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>10 Days Life Span</h6>
+                                </span><br>
+                            </div>
+                            <div style="line-height:8px; text-align: center;" >
+                                    <h6 style=" text-align:center; "> 
+                                         <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>Multiple Account Enabled</h6>
+                                    </span><br>
+                                </div>
+                            <div style="line-height:8px; text-align: center;" >
+                                <h6 style=" text-align:center; "> 
+                                        <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>10% WELCOME BONUS</h6>
+                                </span><br>
+                            </div>
+
+                                            <br>
+                        <button style=" padding-top: 0;  padding-bottom: 0; onclick="location.href='{% url 'login' %}'"">Buy now </button>
+                    </br>
+                </br>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12" style="background-color:#3fb0ac; padding-top: 0;  padding-bottom: 0; "> 
+                    <div class="pricing-wrap" style=" padding-top: 0; padding-bottom: 0;">
+                        <div style="border-bottom: 3px solid #3fb0ac; margin-right: 14px; margin-left: 14px; text-align: center;">
+                            <h3 style="font-weight: 30px; font-size: 30px;">Lot Plan</h3>
+                        </div>
+                        </br>
+                        <style> </style>
+                       <div style=" line-height:8px; font">
+                            <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                    <span style="font-size: 11px;">Min.</span>&nbsp;$5000.00
+                                </span><br>
+                                <center><hr class = "text-center" style="width: 60%; line-height:3px;  border-color:#3fb0ac;"></center>
+                                <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                        <span style="font-size: 11px;">Max.</span>&nbsp;$20000.00
+                                    </span><br>
+                        </div>
+                        <br>
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>5% hourly Income</h6>
+                            </span><br>
+                        </div>
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>15 Days Life Span</h6>
+                            </span><br>
+                        </div>
+                    <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>Instant Withdrawal</h6>
+                            </span><br>
+                        </div>
+                        
+                        <div style="line-height:8px; text-align: center;" >
+                                <h6 style=" text-align:center; "> 
+                                     <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>Multiple Account Enabled</h6>
+                                </span><br>
+                            </div>
+                            <div style="line-height:8px; text-align: center;" >
+                                    <h6 style=" text-align:center; "> 
+                                         <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>15% WELCOME BONUS</h6>
+                                    </span><br>
+                                </div>
+
+                                            <br>
+                        <button style=" padding-top: 0;  padding-bottom: 0px; " onclick="location.href='{% url 'login' %}'">Buy now </button>
+                            </br>
+                        </br>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 col-12" style="background-color:#3fb0ac; padding-top: 0;  padding-bottom: 0; "> 
+                    <div class="pricing-wrap" style=" padding-top: 0; padding-bottom: 0;">
+                        <div style="border-bottom: 3px solid #3fb0ac; margin-right: 14px; margin-left: 14px; text-align: center;">
+                            <h3 style="font-weight: 30px; font-size: 30px;">2021 Reachout Plan</h3>
+                        </div>
+                        </br>
+                        <style> </style>
+                       <div style=" line-height:8px; font">
+                            <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                    <span style="font-size: 11px;">Min.</span>&nbsp;$200.00
+                                </span><br>
+                                <center><hr class = "text-center" style="width: 60%; line-height:3px;  border-color:#3fb0ac;"></center>
+                                <span style='font-size: 26px; font-family:Montserrat, sans-serif; font-weight:500;'>
+                                        <span style="font-size: 11px;">Max.</span>&nbsp;$20000.00
+                                    </span><br>
+                        </div>
+                        <br>
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500;  background:greenyellow;"> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0" class="fa fa-check fa-lg"></i>15% AMAZING hourly Income</h6>
+                            </span><br>
+                        </div>
+                        <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>10 Days Life Span</h6>
+                            </span><br>
+                        </div>
+                    <div style="line-height:8px; text-align: center;" >
+                            <h6 style=" text-align:center; "> 
+                                 <span style="font-size: 17px;  font-family:Montserrat, sans-serif; font-weight:500; text-align: center; width:80%;"><left> <i style=" margin-bottom: 0px; font-size: 17px;  color:#aa0; padding:0%;
+                                 " class="fa fa-check fa-lg"></i></left>Instant Withdrawal</h6>
+                            </span><br>
+                        </div>
+                        
+
+                                            <br>
+                        <button style=" padding-top: 0;  padding-bottom: 0px; " onclick="location.href='{% url 'login' %}'">Buy now </button>
+                            </br>
+                        </br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .pricing-area end -->
+
+    <!-- nvestments-area start -->
+    <div class="nvestments-area position-relative nvestments-area2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="nvestments-img">
+                        <img src="{% static 'statics1/assets/images/bg/2.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7 col-12">
+                    <div class="contact-wrap  flex-style">
+                        <h2>Request A Call Back</h2>
+                        <form action="" method='post'>
+                            <div class="row">
+                                <div class="col-sm-6 col-12">
+                                    <input type="text" placeholder="Name" name="{{form1.name.name}}">
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <input type="email" placeholder="Email" name="{{form1.email.name}}">
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <input type="text" placeholder="Phone">
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <input type="text" placeholder="Subject" >
+                                </div>
+                                <div class="col-12">
+                                    <textarea cols="30" rows="10" placeholder="Massage" name="form1.message.name"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit">Submit Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- nvestments-area end -->
+
+    {% endblock %}
+
+   

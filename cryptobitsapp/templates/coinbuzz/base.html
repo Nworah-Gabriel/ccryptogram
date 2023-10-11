@@ -1,0 +1,300 @@
+<!doctype html>
+<html class="no-js' %}" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ccryptogram</title>
+    <meta name="description" content="">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="{% static 'statics1/assets/images/cryptofx.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.7 css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/bootstrap.min.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/animate.css' %}">
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/owl.carousel.min.css' %}">
+    <!-- swiper.min.css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/swiper.min.css' %}">
+    <!-- font-awesome v4.6.3 css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/font-awesome.min.css' %}">
+    <!-- flaticon.css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/flaticon.css' %}">
+    <!-- magnific-popup.css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/magnific-popup.css' %}">
+    <!-- metisMenu.min.css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/metisMenu.min.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/styles.css' %}">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{% static 'statics1/assets/css/responsive.css' %}">
+    <style>
+       
+        #trading::-webkit-scrollbar {
+             display: none;
+             }
+    
+
+    </style>
+    <!-- modernizr css -->
+    <script src="{% static 'statics1/assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    
+    <!-- header-area start -->
+    <header class="header-area header-area2">
+        <div class="header-top">
+            <div class="container">
+               
+            </div>
+        </div>
+        <div class="header-bottom bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-7">
+                        <div class="logo">
+                            <a href="#"  onclick="location.href='{% url '' %}'">
+                                <img src="{% static 'statics1/assets/images/logo3.png' %}" style="height:auto; width:auto; " alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-sm-9 d-none d-lg-block">
+                        <ul class="mainmenu d-flex justify-content-end">
+                            <li class="{% if request.path == '/' %}active{% endif %}"><a  onclick="location.href='{% url '' %}'"href="javascript:void(0);">Home <i class="fa fa-angle-down"></i></a>
+                               
+                            </li>
+                            <li class="{% if request.path == '/about/' %}active{% endif %}"><a href='#' onclick="location.href='{% url 'about' %}'">about us</a></li>
+                            
+                            <li class="{% if request.path == '/testimony/' %}active{% endif %}"><a href="#" onclick="location.href='{% url 'testimony' %}'">testimony</a>
+                                
+                            </li>
+                            <li class="{% if request.path == '/faq' %}active{% endif %}"><a href="#" onclick="location.href='{% url 'faq' %}'">FAQ</a>
+                               
+                            </li>
+                            
+                            <li class="{% if request.path == '/contact/' %}active{% endif %}"><a href="#" onclick="location.href='{% url 'contact' %}'">contact</a></li>
+                            
+                            <li class="{% if request.path == '/login/' %}active{% endif %}"><a href="#" onclick="location.href='{% url 'login' %}'">Login</a></li>
+                        </ul>
+                    </div>
+                   
+                    <div class="col-lg-2 col-sm-3 col-8">
+                        <div class="geta_quote">
+                            <a href="#" onclick="location.href='{% url 'login' %}'">Earn money?</a>
+                        </div>
+                        <div id="ytWidget"></div><script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=en&widgetTheme=dark&autoMode=false" type="text/javascript"></script>
+                    </div>
+                    <div class="d-block d-lg-none col-4 pull-right col-sm-2">
+                        <ul class="menu">
+                            <li class="first"></li>
+                            <li class="second"></li>
+                            <li class="third"></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                    <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+            <!-- responsive-menu area start -->
+            <div class="responsive-menu-area d-block d-sm-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="metismenu">
+                                <li class="{% if request.path == '/' %}active{% endif %}"><a  onclick="location.href='{% url '' %}'"href="javascript:void(0);">Home <i class="fa fa-angle-down"></i></a>
+                               
+                                </li>
+                            
+                            <li class="{% if request.path == '/about/' %}active{% endif %}"><a href='#' onclick="location.href='{% url 'about' %}'">about us</a></li>
+                            
+                            <li class="{% if request.path == '/testimony/' %}active{% endif %}"><a href="#" onclick="location.href='{% url 'testimony' %}'">testimony</a>
+                                
+                            </li>
+                            <li class="{% if request.path == '/faq' %}active{% endif %}"><a href="#" onclick="location.href='{% url 'faq' %}'">FAQ</a>
+                               
+                            </li>
+                            <li class="{% if request.path == '/faq' %}active{% endif %}"><a href="#" onclick="location.href='{% url 'login' %}'">Login</a>
+                               
+                            </li>
+                            
+                                    <li class="{% if request.path == '/contact/' %}active{% endif %}"><a href="#" onclick="location.href='{% url 'contact' %}'">contact</a></li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+                
+            </div>
+            <!-- responsive-menu area start -->
+        </div>
+        
+    </header>
+    <!-- header-area end -->
+    {% block content %}
+    {% endblock %}
+     <!-- footer-area start -->
+     <footer class="footer-area">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3  col-sm-6 col-12">
+                        <div class="footer-widget footer-logo">
+                            <img src="{% static 'statics1/assets/images/logogr.png' %}" alt="" >
+                            <p>Ccryptogram licensed to sell securities in the United States (US) and other european and non-european countires, to US citizens and residents, and will not permit anyone who is not a legal resident to purchase or sell securities through its application until such time as it is approved to engage in the securities and investment business by the appropriate regulator(s) of a foreign jurisdiction. ccryptogram is currently available to legal residents over 18 years of age only. ccryptogram is providing financial advice or recommending securities through the use of its site and it is authorized to engage in the securities business solely in the Europe.</p>
+                            {% load widget_tweaks %}
+                            <form action="" method='POST'>
+                                {% csrf_token %}
+                                {% render_field form.email placeholder=" Enter Your Mail" type="text" %}
+                                <!-- <input type="text" placeholder="Enter your email" name="form.email.name"> -->
+                                <button type="submit">subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu">
+                            <h3>Our Pages</h3>
+                            <ul>
+                                <li style="color:white;"><a onclick="location.href='{% url '' %}'"><i class="fa fa-angle-double-right" ></i> Home</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> User</a></li>
+                                <li><a href="#" onclick="location.href='{% url 'testimony' %}'"><i class="fa fa-angle-double-right"></i> testimony</a></li>
+                                <li><a href="#" onclick="location.href='{% url 'faq' %}'"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                                <li><a href="#" onclick="location.href='{% url 'contact' %}'"><i class="fa fa-angle-double-right"></i> Contact</a></li>
+                                <li><a href="#" onclick="location.href='{% url 'login' %}'"><i class="fa fa-angle-double-right"></i> login</a></li>
+                               
+                                <!-- <li><a href="#"><i class="fa fa-angle-double-right"></i> </a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="footer-widget footer-twitter" style="color:white;">
+                            <h3> Feeds</h3>
+                            <ul>
+                                <li></i> https://www.instagram.comment-image </li>
+                                <li class="mb-0"><i class="fa fa-twitter"></i>https://twitter.com/ccryptogram </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="footer-widget footer-contact">
+                            <h3>Contact Information</h3>
+                            <ul class="footer-contact-info">
+                                <li><span>Location: </span> 4668 Point Street, IL 60631 United States</li>
+                                <li><span>Email: </span> support@ccryptogram.org</li>
+                                <li><span>Phone: </span> +1 (947)-886-4578</li>
+                            </ul>
+                            <h5>We are Social</h5>
+                            <ul class="social-icon d-flex">
+                                <li class="facebook"><i class="fa fa-facebook"></i></li>
+                                <li class="twitter"><i class="fa fa-twitter"></i></li>
+                                <li class="google-plus"><i class="fa fa-google-plus"></i></li>
+                                <li class="linkedin"><i class="fa fa-linkedin"></i></li>
+                                <li class="btn-instagram"><i class="fa fa-instagram"></i></li>
+                            </ul>
+                            <div class="">
+                                <br>
+                                <img style="height:280px; width:210px;"src="{% static 'statics1/assets/images/bg/cert.jpg'%}" alt="certificate">
+                               
+                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="font-size:9px; background-color: blanchedalmond; line-height: normal;">
+            FRAUD WARNING<br>
+            There is a growing number of Internet sites using the “ccryptogram” name, purporting to represent ccryptogram and positioning themselves as official information resources for ccryptogram. These fraudulent websites do not have our permission to represent us. We believe that their sole purpose is to defraud our customers and partners. ccryptogram reserves the right to take legal action to stop fraudulent activities conducted by dishonest market players. ccryptogram does not assume any responsibility for potential risks related to the use of any information posted at any non-ccryptogram website. These websites are NOT official information resources for ccryptogram or its subsidiaries. If you receive any commercial offers from companies whose website names were made up to resemble the domain names of the ccryptogram group of companies, such as www.ccryptogram.org, www.ccryptogramrs.com, www.ccryptogramcap.com, please report such facts to us at support@ccryptogram.com.</p>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 copyright">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |cccryptogram 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area end -->
+
+    <!-- jquery latest version -->
+    <script src="{% static 'statics1/assets/js/vendor/jquery-2.2.4.min.js' %}"></script>
+    <!-- popper.min.js -->
+    <script src="{% static 'statics1/assets/js/vendor/popper.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'statics1/assets/js/bootstrap.min.js' %}"></script>
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <script src="{% static 'statics1/assets/js/owl.carousel.min.js' %}"></script>
+    <!-- swiper.min.js -->
+    <script src="{% static 'statics1/assets/js/swiper.min.js' %}"></script>
+    <!-- mailchimp.js -->
+    <script src="{% static 'statics1/assets/js/mailchimp.js' %}"></script>
+    <!-- plugins js -->
+    <script src="{% static 'statics1/assets/js/jquery.canvasjs.min.js' %}"></script>
+    <!-- metisMenu.min.js -->
+    <script src="{% static 'statics1/assets/js/metisMenu.min.js' %}"></script>
+    <!-- plugins js -->
+    <script src="{% static 'statics1/assets/js/plugins.js' %}"></script>
+    <!--Start of Tawk.to Script-->
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/607ecee15eb20e09cf34ce8d/1f3nlg96k';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+    <!--End of Tawk.to Script-->
+        <script>
+            // chart
+    window.onload = function () {
+    var limit = 10000;    //increase number of dataPoints by increasing the limit
+    var y = 100;    
+    var data = [];
+    var dataSeries = { type: "line" };
+    var dataPoints = [];
+    for (var i = 0; i < limit; i += 1) {
+        y += Math.round(Math.random() * 10 - 5);
+        dataPoints.push({
+            x: i,
+            y: y
+        });
+    }
+    dataSeries.dataPoints = dataPoints;
+    data.push(dataSeries);
+
+    //Better to construct options first and then pass it as a parameter
+    var options = {
+        zoomEnabled: true,
+        animationEnabled: true,
+        axisY: {
+            includeZero: false
+        },
+        data: data  // random data
+    };
+
+        $("#chartContainer").CanvasJSChart(options);
+    }
+    </script>
+    <!-- main js -->
+    <script src="{% static 'statics1/assets/js/scripts.js' %}"></script>
+</body>
+
+</html>

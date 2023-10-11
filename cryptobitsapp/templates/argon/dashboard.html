@@ -1,0 +1,484 @@
+{% extends 'coinbuzz/bases.html' %}
+{%load static %}
+
+{% block content %}
+{% include 'argon/_chipin.html' %}
+<!-- Header -->
+<!-- Header -->
+<!-- header-area start -->
+
+<style>
+  .noscroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .noscroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+</style>
+<div class="header bg-primary pb-6 " style="background-color: #3fb0ac !important; ">
+  <div class="container-fluid">
+    <div class="header-body ">
+      <div class="row align-items-center py-4">
+        <!-- <div class="col-lg-12">
+              {% if gold == 1 %}<h3 class="page-header"><img src="{% static 'img/bitcoin1.gif' %}" style="height:70px; margin-top:-2px;"> Gold User (VIP)</h3>{% endif %}
+              {% if gold == 0 %}<h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>{% endif %}
+              
+            </div> -->
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">
+            ({{user.username}})</h6>
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-lg-6 col-5 text-right">
+          {% if gold == True %} <h6 class="h2 text-white d-inline-block mb-0">
+            <img src="{% static 'statics1/assets/images/bitcoin.gif' %}" style="height:70px; margin-top:-2px;"></h6><a
+            href="" class="btn btn-sm btn-neutral">gold</a><br> {% else %}<a href="withdraw"
+            class="btn btn-sm btn-neutral">withdraw</a>
+          <a href="deposit" class="btn btn-sm btn-neutral">deposit</a>{% endif %}
+        </div>
+      </div>
+      <!-- Card stats -->
+      <div style="overflow: auto;" class="noscroll">
+        <div class="row flex-row flex-nowrap">
+          <div class="col">
+            <div class="card card-stats">
+              <!-- Card body -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title text-uppercase text-muted mb-0">Trade Balance</h5>
+                    <span class="h2 font-weight-bold mb-0">${{information.balance}}</span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                      <i class="fa fa-dollar-sign"></i>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <p class="mt-3 mb-0 text-sm">
+                  <span class="text-success mr-2"><i class="fa fa-dollar-sign"></i> 3.48%</span>
+                  <span class="text-nowrap">account balance</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-stats">
+              <!-- Card body -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title text-uppercase text-muted mb-0">withdrawable</h5>
+                    <span class="h2 font-weight-bold mb-0">${{information.amount_withdrawable}}</span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                      <i class="fa fa-dollar-sign"></i>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <p class="mt-3 mb-0 text-sm">
+                  <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                  <span class="text-nowrap">withdrawable</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-stats">
+              <!-- Card body -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title text-uppercase text-muted mb-0">bitcoin to USD</h5>
+                    <span class="h2 font-weight-bold mb-0">${{bitcoin}}</span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                      <i class="ni ni-money-coins"></i>
+                    </div>
+                  </div>
+                </div>
+                <br>
+
+                <p class="mt-3 mb-0 text-sm">
+                  <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> {{cardano}}</span>
+                  <span class="text-nowrap">Since last day</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-stats">
+              <!-- Card body -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title text-uppercase text-muted mb-0">Bitcoin to Eur</h5>
+                    <span class="h2 font-weight-bold mb-0">${{bitcoineur}}<span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                      <i class="ni ni-chart-bar-32"></i>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <p class="mt-3 mb-0 text-sm">
+                  <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> {{nem}}</span>
+                  <span class="text-nowrap">Since last 24 hours</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col-xl-8">
+      <div class="card bg-default noscroll" style="padding-bottom: 40px !important; ">
+        <div class="card-header bg-transparent">
+          <div class="row align-items-center">
+            <div class="col">
+              <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
+              <h5 class="h3 text-white mb-0">cryptochart</h5>
+            </div>
+            <div class="col">
+              <ul class="nav nav-pills justify-content-end">
+                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark"
+                  data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$"
+                  data-suffix="k">
+                  <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                    <span class="d-none d-md-block">Month</span>
+                    <span class="d-md-none">M</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark"
+                  data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 100, 30, 15, 40, 40]}]}}' data-prefix="$"
+                  data-suffix="k">
+                  <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                    <span class="d-none d-md-block">Week</span>
+                    <span class="d-md-none">W</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- Chart -->
+          <div class="chart">
+            <!-- Chart wrapper -->
+            <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
+            <coingecko-coin-compare-chart-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd"
+              locale="en"></coingecko-coin-compare-chart-widget>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-header bg-transparent">
+          <div class="row align-items-center">
+            <div class="col">
+              <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
+              <h5 class="h3 mb-0">statics</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- Chart -->
+          <div
+            style="width: 250px; height:335px; background-color: #FAFAFA; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;margin: 0;width: 250px;padding:1px;padding: 0px; margin: 0px;">
+            <div style="height:315px; padding:0px; margin:0px; width: 100%;"><iframe
+                src="https://widget.coinlib.io/widget?type=converter&theme=light" width="250" height="310px"
+                scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+                style="border:0;margin:0;padding:0;"></iframe></div>
+            <div
+              style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+              <a href="https://coinlib.io" target="_blank"
+                style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency
+                Prices</a>&nbsp;by Ccryptogram</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-8">
+      <div class="card">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="mb-0">Other cryptos</h3>
+            </div>
+            <div class="col text-right">
+              <a href="#!" class="btn btn-sm btn-primary">See all</a>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <!-- Projects table -->
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Currency</th>
+
+                <th scope="col">Dollar Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  ripple
+                </th>
+
+                <td>
+                  <i class="fas fa-arrow-up text-success mr-3"></i> ${{ripple}}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  elitecoin
+                </th>
+
+                <td>
+                  <i class="fas fa-arrow-down text-warning mr-3"></i> ${{elitecoin}}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  cardano
+                </th>
+                <td>
+                  <i class="fas fa-arrow-down text-warning mr-3"></i> ${{cardano}}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  bitcoinneo
+                </th>
+
+                <td>
+                  <i class="fas fa-arrow-up text-success mr-3"></i> ${{bitcoinneo}}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  nem
+                </th>
+
+                <td>
+                  <i class="fas fa-arrow-down text-danger mr-3"></i> ${{nem}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 noscroll">
+      <div class="card noscroll" style="width:100% !important;">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="mb-0">Social traffic</h3>
+            </div>
+            <div class="col text-right">
+              <a href="#!" class="btn btn-sm btn-primary">See all</a>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive noscroll">
+          <!-- Projects table -->
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Referral</th>
+                <th scope="col">Visitors</th>
+                <th scope="col">progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  Facebook
+                </th>
+                <td>
+                  11,480
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <span class="mr-2"></span>
+                    <div>
+                      <div class="progress">
+                        <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60"
+                          aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Facebook
+                </th>
+                <td>
+                  5,480
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <span class="mr-2"></span>
+                    <div>
+                      <div class="progress">
+                        <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70"
+                          aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Google
+                </th>
+                <td>
+                  12,807
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <span class="mr-2"></span>
+                    <div>
+                      <div class="progress">
+                        <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80"
+                          aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Instagram
+                </th>
+                <td>
+                  12,678
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <span class="mr-2"></span>
+                    <div>
+                      <div class="progress">
+                        <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75"
+                          aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  twitter
+                </th>
+                <td>
+                  10,645
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <span class="mr-2"></span>
+                    <div>
+                      <div class="progress">
+                        <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30"
+                          aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- Footer -->
+<footer class="footer pt-0">
+
+</footer>
+<!-- footer-area end -->
+
+<!-- <script>
+  // chart
+  window.onload = function () {
+    var limit = 10000;    //increase number of dataPoints by increasing the limit
+    var y = 100;
+    var data = [];
+    var dataSeries = { type: "line" };
+    var dataPoints = [];
+    for (var i = 0; i < limit; i += 1) {
+      y += Math.round(Math.random() * 10 - 5);
+      dataPoints.push({
+        x: i,
+        y: y
+      });
+    }
+    dataSeries.dataPoints = dataPoints;
+    data.push(dataSeries);
+
+    //Better to construct options first and then pass it as a parameter
+    var options = {
+      zoomEnabled: true,
+      animationEnabled: true,
+      axisY: {
+        includeZero: false
+      },
+      data: data  // random data
+    };
+
+    $("#chartContainer").CanvasJSChart(options);
+  }
+</script> -->
+<!-- main js -->
+<script src="{% static 'statics1/assets/js/scripts.js' %}"></script>
+
+<!-- Argon Scripts -->
+
+<!-- Core -->
+<script src="{% static 'static2/assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'static2/assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'static2/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'static2/assets/vendor/js-cookie/js.cookie.js' %}"></script>
+<script src="{% static 'static2/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js' %}"></script>
+<script src="{% static 'static2/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js' %}"></script>
+<!-- Optional JS -->
+<script src="{% static 'static2/assets/vendor/chart.js/dist/Chart.min.js' %}"></script>
+<script src="{% static 'static2/assets/vendor/chart.js/dist/Chart.extension.js' %}"></script>
+<!-- Argon JS -->
+
+</body>
+
+</html>
+
+{% endblock %}

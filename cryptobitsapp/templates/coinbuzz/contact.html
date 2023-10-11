@@ -1,0 +1,90 @@
+{% extends 'coinbuzz/base.html' %}
+{% load static %}
+  {% block content %}
+    <!-- header-area end -->
+
+    <!-- breadcumb-area start -->
+    <div class="breadcumb-area flex-style  black-opacity">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Contact</h2>
+                    <ul class="d-flex">
+                        <li><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-angle-double-right"></i></li>
+                        <li><span>Contact</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcumb-area end -->
+
+    <div class="contact-page-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3><span>Get in </span> touch with us! </h3>
+                        <p>Please fill the form accurately and clearly and a ccryptogram agent should get to you in less than 24 hours. </p>
+                        {% load widget_tweaks %}
+                        <form method='POST'>
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    {% render_field form1.name placeholder="Name" type="text" %}
+                                    <!-- <input type="text" placeholder="Name" name="form1.name.name"> -->
+                                </div>
+                                <div class="col-lg-6">
+                                    {% render_field form1.email placeholder="Email" type="email" %}
+                                    <!-- <input type="email" placeholder="Email" name="form1.email.name" > -->
+                                </div>
+                                <div class="col-12">
+                                    {% render_field form1.subject placeholder="Subject" type="text" %}
+                                    <!-- <input type="text" placeholder="subject"name="form1.message.name"> -->
+                                </div>
+                                <div class="col-12">
+                                    {% render_field form1.message placeholder=" Your Message" type="textarea" %}
+                                    <!-- <textarea name="massage" cols="30" rows="10" placeholder="Your Message"></textarea> -->
+                                </div>
+                                <p>{{message}}</p>
+                                <div class="col-12">
+                                    <button type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-page-info">
+                        <h3>Head Office</h3>
+                        <ul class="border-bottom" style="font-size: 300px;">
+                            <li><i class="fa fa-home"></i> 3519  Ottis Street  Braxton Street,Clinton,  OK 73601 Oklahoma USA</li>
+                            <li><i class="fa fa-envelope"></i> Support@ccryptogram.org</li>
+                            <li><i class="fa fa-phone"></i> Telegram: <a href="https://t.me/timbrees
+
+                                "> +1 (947)-886-4578 </a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <hr>
+                        <h3>Support Office</h3>
+                        <ul class="mb-0">
+                            <li><i class="fa fa-home"></i> 3519  Ottis Street  Braxton Street,Clinton,  OK 73601 Oklahoma USA</li>
+                            <li><i class="fa fa-envelope"></i> Support@ccryptogram.org</li>
+                            <li><i class="fa fa-phone"></i> Telegram: <a href="https://t.me/timbrees
+
+                                "> +1 (947)-886-4578 </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</br>
+<br>
+<br>
+
+    
+        
+    {% endblock %}
