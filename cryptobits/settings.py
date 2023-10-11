@@ -16,8 +16,17 @@ SECRET_KEY = '74f@!wp!as*8v#fy+6c$4k-rhn0pp7w^#9fy#pzi5dgqtuf@bg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# IS_RENDER = "RENDER" in os.environ
+
+# if IS_RENDER:
+#     DEBUG = True
+# else:
+#     DEBUG = False
+
+
+
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-ALLOWED_HOSTS = ['www.ccryptogram.org', "ccryptogram.onrender.com", "*.*"]
+ALLOWED_HOSTS = ['www.ccryptogram.org', "ccryptogram.onrender.com", "*.*", '127.0.0.1']
 
 # Application definition
 

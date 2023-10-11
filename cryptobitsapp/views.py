@@ -74,7 +74,7 @@ def signup(request):
             
             
             if user is not None:
-                message="Congratulations!!!, \n An activation email has been sent to your account. \n this might take a while... \n please be patient !"
+                message="Congratulations!!!\n You have successfully created an account! Login to complete the registration process."
                 login(request, user)
                 user.last_name = lastname
                 user.first_name = firstname
@@ -106,9 +106,7 @@ def signup(request):
                 
             else:
                 message="username or password can't be used "
-                pass
-                # return this acount is invaid        
-                # return this acount is invaid        
+                pass      
     else:
         form=SignupForm()
     
@@ -139,14 +137,13 @@ class VerificationView(View):
         
             return redirect ("signup")    
 
+
 @login_required(login_url='/login/')
 def signupextra(request):
     message=""
     if request.method=='POST':
         form = SignupFormextra(request.POST)
-        print("hi1")
         if form.is_valid():
-            print("hi2")
             moblie_number = form.cleaned_data['moblie_number']
             occupation = form.cleaned_data['occupation']
             alternate_email = form.cleaned_data['alternate_email']
@@ -172,14 +169,18 @@ def signupextra(request):
                 return redirect("profile")
         else:
             message="invalid form"
-            return render (request, "argon/register.html", {'form':form,'message':message})
-                # return this acount is invaid        
+            return render (request, "argon/register.html", {'form':form,'message':message})        
     else:
         form=SignupFormextra()
     return render (request, "argon/register.html", {'form':form,'message':message})
 
+
 @login_required(login_url='/login/')
 def profile(request):
+    """
+    A functional based view for the profile page (profile.html)
+    """
+
     try:
         UserExtraInformation.objects.get(user=request.user)
     except:
@@ -188,18 +189,32 @@ def profile(request):
     information = UserExtraInformation.objects.get(user=request.user)  
     message = UserMessages.objects.filter(sender=request.user)
     message_count = len(message)
-    bitcoin = data.getprices("bitcoin","usd")
-    bitcoineur = data.getprices("bitcoin","eur")
-    ethereum = data.getprices("ethereum","usd")
-    bitcoincash = data.getprices("bitcoin-cash","usd")
-    ripple = data.getprices("ripple","usd")
-    elitecoin = data.getprices("elitecoin","usd")
-    cardano = data.getprices("cardano","usd")
-    nem = data.getprices("nem","usd")
-    bitcoinneo = data.getprices("bitcoin-neo","usd")
-    iota = data.getprices("iota","usd")
-    gold = information.gold
-    
+
+    try:
+        bitcoin = data.getprices("bitcoin","usd")
+        bitcoineur = data.getprices("bitcoin","eur")
+        ethereum = data.getprices("ethereum","usd")
+        bitcoincash = data.getprices("bitcoin-cash","usd")
+        ripple = data.getprices("ripple","usd")
+        elitecoin = data.getprices("elitecoin","usd")
+        cardano = data.getprices("cardano","usd")
+        nem = data.getprices("nem","usd")
+        bitcoinneo = data.getprices("bitcoin-neo","usd")
+        iota = data.getprices("iota","usd")
+        gold = information.gold
+    except:
+        bitcoin = ""
+        bitcoineur = ""
+        ethereum = ""
+        bitcoincash = ""
+        ripple = ""
+        elitecoin = ""
+        cardano = ""
+        nem = ""
+        bitcoinneo = ""
+        iota = ""
+        gold = ""
+        
 
     if request.method=='POST':
         form = ContactUsForm(request.POST)
@@ -218,13 +233,18 @@ def profile(request):
 
 @login_required(login_url='/login/')
 def detail(request):
+    """
+    A functional based view for the detail page (details.html)
+    """
+
     user = User.objects.get(username=request.user)
     information = UserExtraInformation.objects.get(user=request.user)  
     message = UserMessages.objects.filter(sender=request.user)
     message_count = len(message)
-    bitcoin = data.getprices("bitcoin","usd")
-   
-
+    try:
+        bitcoin = data.getprices("bitcoin","usd")
+    except:
+         bitcoin = ""
 
     if request.method=='POST':
         form = ContactUsForm(request.POST)
@@ -258,17 +278,31 @@ def index(request):
     A functional based view for the index page (index_main.html)
     """
 
-    bitcoin = data.getprices("bitcoin","usd")
-    bitcoineur = data.getprices("bitcoin","eur")
-    ethereum = data.getprices("ethereum","usd")
-    bitcoincash = data.getprices("bitcoin-cash","usd")
-    ripple = data.getprices("ripple","usd")
-    elitecoin = data.getprices("elitecoin","usd")
-    cardano = data.getprices("cardano","usd")
-    nem = data.getprices("nem","usd")
-    bitcoinneo = data.getprices("bitcoin-neo","usd")
-    iota = data.getprices("iota","usd")
     form = SubscriberForm(request.POST)
+    
+    try:
+        bitcoin = data.getprices("bitcoin","usd")
+        bitcoineur = data.getprices("bitcoin","eur")
+        ethereum = data.getprices("ethereum","usd")
+        bitcoincash = data.getprices("bitcoin-cash","usd")
+        ripple = data.getprices("ripple","usd")
+        elitecoin = data.getprices("elitecoin","usd")
+        cardano = data.getprices("cardano","usd")
+        nem = data.getprices("nem","usd")
+        bitcoinneo = data.getprices("bitcoin-neo","usd")
+        iota = data.getprices("iota","usd")
+
+    except:
+        bitcoin = ""
+        bitcoineur = ""
+        ethereum = ""
+        bitcoincash = ""
+        ripple = ""
+        elitecoin = ""
+        cardano = ""
+        nem = ""
+        bitcoinneo = ""
+        iota = ""
    
     if request.method=='POST':
         form = SubscriberForm(request.POST)
@@ -407,22 +441,39 @@ def blog(request):
 
 @login_required(login_url='/login/')
 def withdraw(request):
+    """
+    A functional based view for the withdraw page (withdraw.html)
+    """
+
     user = User.objects.get(username=request.user)
     information = UserExtraInformation.objects.get(user=request.user)  
     message = UserMessages.objects.filter(sender=request.user)
     message_count = len(message)
-    bitcoin = data.getprices("bitcoin","usd")
-    bitcoineur = data.getprices("bitcoin","eur")
-    ethereum = data.getprices("ethereum","usd")
-    bitcoincash = data.getprices("bitcoin-cash","usd")
-    ripple = data.getprices("ripple","usd")
-    elitecoin = data.getprices("elitecoin","usd")
-    cardano = data.getprices("cardano","usd")
-    nem = data.getprices("nem","usd")
-    bitcoinneo = data.getprices("bitcoin-neo","usd")
-    iota = data.getprices("iota","usd")
-    gold = information.gold
-    
+
+    try:
+        bitcoin = data.getprices("bitcoin","usd")
+        bitcoineur = data.getprices("bitcoin","eur")
+        ethereum = data.getprices("ethereum","usd")
+        bitcoincash = data.getprices("bitcoin-cash","usd")
+        ripple = data.getprices("ripple","usd")
+        elitecoin = data.getprices("elitecoin","usd")
+        cardano = data.getprices("cardano","usd")
+        nem = data.getprices("nem","usd")
+        bitcoinneo = data.getprices("bitcoin-neo","usd")
+        iota = data.getprices("iota","usd")
+        gold = information.gold
+    except:
+        bitcoin = ""
+        bitcoineur = ""
+        ethereum = ""
+        bitcoincash = ""
+        ripple = ""
+        elitecoin = ""
+        cardano = ""
+        nem = ""
+        bitcoinneo = ""
+        iota = ""
+        gold = ""
     
 
     if request.method=='POST':
@@ -447,21 +498,39 @@ def test(request):
 
 @login_required(login_url='/login/')
 def deposit(request):
+    """
+    A functional based view for the withdraw page (withdraw.html)
+    """
+
     user = User.objects.get(username=request.user)
     information = UserExtraInformation.objects.get(user=request.user)  
     message = UserMessages.objects.filter(sender=request.user)
     message_count = len(message)
-    bitcoin = data.getprices("bitcoin","usd")
-    bitcoineur = data.getprices("bitcoin","eur")
-    ethereum = data.getprices("ethereum","usd")
-    bitcoincash = data.getprices("bitcoin-cash","usd")
-    ripple = data.getprices("ripple","usd")
-    elitecoin = data.getprices("elitecoin","usd")
-    cardano = data.getprices("cardano","usd")
-    nem = data.getprices("nem","usd")
-    bitcoinneo = data.getprices("bitcoin-neo","usd")
-    iota = data.getprices("iota","usd")
-    gold = information.gold
+
+    try:
+        bitcoin = data.getprices("bitcoin","usd")
+        bitcoineur = data.getprices("bitcoin","eur")
+        ethereum = data.getprices("ethereum","usd")
+        bitcoincash = data.getprices("bitcoin-cash","usd")
+        ripple = data.getprices("ripple","usd")
+        elitecoin = data.getprices("elitecoin","usd")
+        cardano = data.getprices("cardano","usd")
+        nem = data.getprices("nem","usd")
+        bitcoinneo = data.getprices("bitcoin-neo","usd")
+        iota = data.getprices("iota","usd")
+        gold = information.gold
+    except:
+        bitcoin = ""
+        bitcoineur = ""
+        ethereum = ""
+        bitcoincash = ""
+        ripple = ""
+        elitecoin = ""
+        cardano = ""
+        nem = ""
+        bitcoinneo = ""
+        iota = ""
+        gold = ""
 
     
 
