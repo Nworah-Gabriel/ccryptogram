@@ -36,3 +36,12 @@ class ContactForm(forms.Form):
 
 class SubscriberForm(forms.Form):
      email = forms.EmailField()
+
+class UserMessageForm(forms.Form):
+    """
+    A class based form for capturing the users transaction requests
+    """
+
+    message = forms.CharField(max_length=5000)
+    Transaction_Amount = forms.CharField(max_length=500)
+    wallet_address = forms.CharField(max_length=500)

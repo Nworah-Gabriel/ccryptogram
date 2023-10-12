@@ -3,7 +3,7 @@ import json
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 
-from .forms import LoginForm, SignupForm, SignupFormextra, ContactUsForm,ContactForm,SubscriberForm
+from .forms import LoginForm, SignupForm, SignupFormextra, ContactUsForm, ContactForm, SubscriberForm, UserMessageForm
 from .models import UserExtraInformation,UserMessages,Contact,subscriber
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -22,11 +22,12 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
 from .utils import token_generator
 
-
 # Create your views here.
 
 def userlogin(request):
-    """"""
+    """
+    A functional based view for the login page (login.html)
+    """
     message=""
     if request.method =='POST':
         form = LoginForm(request.POST)
@@ -39,9 +40,10 @@ def userlogin(request):
                 message="user found"
                 login(request, user)
                 return redirect('../profile/')
-            else:
-                message="invalid username or password"                                        
-                pass
+            elif user is None:
+                print(user)
+                message="Invalid Login Details"                                        
+                return render (request, "argon/login.html", {'form':form,'message':message})
     else:
         form=LoginForm()
     return render (request, "argon/login.html", {'form':form,'message':message})
@@ -51,6 +53,10 @@ def userlogout(request):
     return redirect('../login/')       
                
 def signup(request):
+    """
+    A functional based view for the signup page (register.html)
+    """
+
     message=""
     if request.method=='POST':
         form = SignupForm(request.POST)
@@ -75,10 +81,8 @@ def signup(request):
             
             if user is not None:
                 message="Congratulations!!!\n You have successfully created an account! Login to complete the registration process."
-                login(request, user)
                 user.last_name = lastname
                 user.first_name = firstname
-                user.is_active=False
                 user.save()
                 
                 uidb64 = force_str(urlsafe_base64_encode(force_bytes(str(user.pk))))
@@ -87,7 +91,6 @@ def signup(request):
                 link = reverse('activate', kwargs={"uidb64":uidb64, "token":token_generator.make_token(user)})
                 
                 activate_url = "https://"+domain+link #use https for development
-                # activate_url = "hello"
 
 
                 email_subject = 'Activate your account'
@@ -140,6 +143,10 @@ class VerificationView(View):
 
 @login_required(login_url='/login/')
 def signupextra(request):
+    """
+    A functional based view for capturing the user's extra data
+    """
+
     message=""
     if request.method=='POST':
         form = SignupFormextra(request.POST)
@@ -449,6 +456,8 @@ def withdraw(request):
     information = UserExtraInformation.objects.get(user=request.user)  
     message = UserMessages.objects.filter(sender=request.user)
     message_count = len(message)
+    transaction_form =  UserMessageForm(request.POST)
+    form = ContactUsForm()
 
     try:
         bitcoin = data.getprices("bitcoin","usd")
@@ -476,20 +485,25 @@ def withdraw(request):
         gold = ""
     
 
-    if request.method=='POST':
-        form = ContactUsForm(request.POST)
-        if form.is_valid():
-            message = form.cleaned_data['message']
+    if request.method == 'POST':
+        form = ContactUsForm()
+        if transaction_form.is_valid():
+            message = transaction_form.cleaned_data['message']
+            transaction_amount = transaction_form.cleaned_data['Transaction_Amount']
+            wallet_address = transaction_form.cleaned_data['wallet_address']
             sender=request.user
-            UserMessages.objects.create(
+            Withdrawal_Request = UserMessages.objects.create(
                 sender=sender,
                 email=sender.email,
+                wallet_address=wallet_address,
+                Transaction_Amount = transaction_amount,
                 message = message,
-                subject = "customer service"
+                subject = "Pending Deposit Request",
             )
+            Withdrawal_Request.save()
     else:
         form = ContactUsForm()
-    return render(request, "argon/withdraw.html",{'form':form, 'user':user, 'information':information, 'message':message, 'message_count':message_count, 'bitcoin':bitcoin,'bitcoineur':bitcoineur,'ethereum':ethereum, 'bitcoincash':bitcoincash, 'ripple':ripple, 'elitecoin':elitecoin, 'cardano':cardano, 'nem':nem, 'bitcoinneo':bitcoinneo, 'iota':iota, 'gold':gold })
+    return render(request, "argon/withdraw.html",{'form':form, 'withdrawal_form':transaction_form, 'user':user, 'information':information, 'message':message, 'message_count':message_count, 'bitcoin':bitcoin,'bitcoineur':bitcoineur,'ethereum':ethereum, 'bitcoincash':bitcoincash, 'ripple':ripple, 'elitecoin':elitecoin, 'cardano':cardano, 'nem':nem, 'bitcoinneo':bitcoinneo, 'iota':iota, 'gold':gold })
 
 def test(request):
      return render (request, "argon/test.html")
@@ -506,6 +520,8 @@ def deposit(request):
     information = UserExtraInformation.objects.get(user=request.user)  
     message = UserMessages.objects.filter(sender=request.user)
     message_count = len(message)
+    transaction_form =  UserMessageForm(request.POST)
+    form = ContactUsForm()
 
     try:
         bitcoin = data.getprices("bitcoin","usd")
@@ -534,19 +550,23 @@ def deposit(request):
 
     
 
-    if request.method=='POST':
-        form = ContactUsForm(request.POST)
-        if form.is_valid():
-            message = form.cleaned_data['message']
+    if request.method == 'POST':
+        form = ContactUsForm()
+        if transaction_form.is_valid():
+            message = transaction_form.cleaned_data['message']
+            transaction_amount = transaction_form.cleaned_data['Transaction_Amount']
             sender=request.user
-            UserMessages.objects.create(
+            new_deposit = UserMessages.objects.create(
                 sender=sender,
                 email=sender.email,
+                Transaction_Amount = transaction_amount,
                 message = message,
-                subject = "customer service"
+                subject = "Pending Deposit Request",
             )
+            new_deposit.save()
+
     else:
         form = ContactUsForm()
-    return render(request, "argon/deposit.html",{'form':form, 'user':user, 'information':information, 'message':message, 'message_count':message_count, 'bitcoin':bitcoin,'bitcoineur':bitcoineur,'ethereum':ethereum, 'bitcoincash':bitcoincash, 'ripple':ripple, 'elitecoin':elitecoin, 'cardano':cardano, 'nem':nem, 'bitcoinneo':bitcoinneo, 'iota':iota, 'gold':gold })
+    return render(request, "argon/deposit.html",{'form':form, 'user':user, 'form2':transaction_form, 'information':information, 'message':message, 'message_count':message_count, 'bitcoin':bitcoin,'bitcoineur':bitcoineur,'ethereum':ethereum, 'bitcoincash':bitcoincash, 'ripple':ripple, 'elitecoin':elitecoin, 'cardano':cardano, 'nem':nem, 'bitcoinneo':bitcoinneo, 'iota':iota, 'gold':gold })
 
 

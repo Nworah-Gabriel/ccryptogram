@@ -129,7 +129,12 @@
            
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
+                {% if not message %}
                 <small>Sign in with credentials</small>
+                {% endif %}
+                {% if message %}
+                <small style="color: red; font-size: 15px;">{{ message }}<small>
+                {% endif %}
               </div>
               <form role="form" method="POST">
                 {% csrf_token %}

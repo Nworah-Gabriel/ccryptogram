@@ -18,8 +18,10 @@ class Country(models.Model):
 class UserMessages(models.Model):
     sender = models.ForeignKey(User, on_delete=models.CASCADE)
     email = models.EmailField(max_length=50)
+    wallet_address = models.CharField(max_length=500, null=False, blank=False, default="0x1ddsdfewrtbfhtrregwhty76846uyjesfgwe4tfeq34f34rqf")
     message = models.TextField(max_length=5000)
     subject = models.CharField(max_length=500)
+    Transaction_Amount = models.CharField(max_length=500, null=False, blank=False, default="5000")
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
