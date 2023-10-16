@@ -186,7 +186,7 @@
   
 
 <!-- modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -201,10 +201,10 @@
           {% csrf_token %}
           <div class="form-group">
             <label for="exampleFormControlInput1">Wallet address</label>
-            {% render_field withdrawal_form.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" %}
+            {% render_field withdrawal_form.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" value="bc1qheursw3qdxyldhl0pfkv74uu3uw9y2mrsttq34"%}
             <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="exampleFormControlSelect1">Wallet type</label>
             <select class="form-control" id="exampleFormControlSelect1">
               <option>Coinbase</option>
@@ -213,7 +213,7 @@
               <option>Local Bitcoin</option>
               <option>Others..</option>
             </select>
-          </div>
+          </div> -->
           <div class="form-group">
             <label for="exampleFormControlInput1">Amount</label>
             {% render_field withdrawal_form.Transaction_Amount type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" %}
@@ -232,6 +232,152 @@
     </div>
   </div>
 </div>
+<!-- modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request Withdrawal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% load widget_tweaks %}
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Wallet address</label>
+            {% render_field withdrawal_form.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" value="LKigzTz89amPcgEkwiqvABK3WZzB4qEqhx" editable=false%}
+            <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+          </div>
+          <!-- <div class="form-group">
+            <label for="exampleFormControlSelect1">Wallet type</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Coinbase</option>
+              <option>oinmama</option>
+              <option>Luno</option>
+              <option>Local Bitcoin</option>
+              <option>Others..</option>
+            </select>
+          </div> -->
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Amount</label>
+            {% render_field withdrawal_form.Transaction_Amount type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" %}
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Extra Message For Admin</label>
+            {% render_field withdrawal_form.message type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Be sure to protect ALL personal informations from a third party." %}
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary"class="btn btn-primary" data-toggle="modal" data-target="#pendingModal">Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request Withdrawal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% load widget_tweaks %}
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Wallet address</label>
+            {% render_field withdrawal_form.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" value="0x5f2f1a9C308C00552F5bA730d8B9E3f64fEc5D3D" editable=false%}
+            <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+          </div>
+          <!-- <div class="form-group">
+            <label for="exampleFormControlSelect1">Wallet type</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Coinbase</option>
+              <option>oinmama</option>
+              <option>Luno</option>
+              <option>Local Bitcoin</option>
+              <option>Others..</option>
+            </select>
+          </div> -->
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Amount</label>
+            {% render_field withdrawal_form.Transaction_Amount type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" %}
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Extra Message For Admin</label>
+            {% render_field withdrawal_form.message type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Be sure to protect ALL personal informations from a third party." %}
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+          </div>
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request Withdrawal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% load widget_tweaks %}
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Wallet address</label>
+            {% render_field withdrawal_form.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" value=" LKigzTz89amPcgEkwiqvABK3WZzB4qEqhx"%}
+            <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+          </div>
+          <!-- <div class="form-group">
+            <label for="exampleFormControlSelect1">Wallet type</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Coinbase</option>
+              <option>oinmama</option>
+              <option>Luno</option>
+              <option>Local Bitcoin</option>
+              <option>Others..</option>
+            </select>
+          </div> -->
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Amount</label>
+            {% render_field withdrawal_form.Transaction_Amount type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" %}
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Extra Message For Admin</label>
+            {% render_field withdrawal_form.message type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Be sure to protect ALL personal informations from a third party." %}
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary"class="btn btn-primary" data-toggle="modal" data-target="#pendingModal">Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>   <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary"class="btn btn-primary" data-toggle="modal" data-target="#pendingModal">Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- transaction pending modal -->
 <div class="modal fade" id="pendingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -378,7 +524,7 @@
                     </br>
                         Processing Time - 1 Day.</p>
                     <!-- <a href="#" onclick="openForm()" class="btn cryptos-btn" style="text-align:center; color:rgb(236, 75, 12) ;">WITHDRAW</a> -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="text-align:center; color:rgb(236, 75, 12) ;">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" style="text-align:center; color:rgb(236, 75, 12) ;">
                         WITHDRAW
                       </button>
               </div>
@@ -412,7 +558,7 @@
               </br>
                   Processing Time - 1 Day.</p>
               <!-- <a href="#" onclick="openForm()" class="btn cryptos-btn" style="text-align:center; color:rgb(236, 75, 12) ;">WITHDRAW</a> -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="text-align:center; color:rgb(236, 75, 12) ;">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="text-align:center; color:rgb(236, 75, 12) ;">
                   WITHDRAW
                 </button>
             </div>

@@ -181,10 +181,8 @@
  </div>
               
   
-  
-
 <!-- modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -193,13 +191,13 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="background-color: white;">
         {% load widget_tweaks %}
         <form method="POST">
           {% csrf_token %}
           <div class="form-group">
             <label for="exampleFormControlInput1">Wallet address</label>
-            {% render_field form2.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" %}
+            {% render_field form2.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" value="LKigzTz89amPcgEkwiqvABK3WZzB4qEqhx"%}
             <!-- <input type="text" class="form-control" value="bc1q30w4gserjhyvhrtupj0pcqhduf2m53zpa6cxf2" placeholder="bc1q30w4gserjhyvhrtupj0pcqhduf2m53zpa6cxf2"  id="myInput"> -->
             <button onclick="copyFunction()" class="btn" style="width: 20%; height:20%;" ><u>Copy</u></button>
             <script>
@@ -221,7 +219,133 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1"></label>
-            <img style="width:300px; height:300px;" src="{% static 'statics1/assets/images/wallet.jpeg' %}" alt="">
+            <div style="display: flex; justify-content: space-around;">
+            <img style="width:200px; height:200px; align-items: center;" src="{% static 'statics1/assets/images/post/litebarcode.png' %}" alt="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Amount</label>
+            {% render_field form2.Transaction_Amount type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" %}
+            <!-- <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount"> -->
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Message For User</label>
+            {% render_field form2.message type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Be sure to protect ALL personal informations from a third party." %}
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Be sure to protect ALL personal informations from a third party."></textarea> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">paid</button>
+          </div>
+        </form>
+      </div>
+        </div>
+      </div>
+    </div>
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Fund Your Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background-color:white;">
+        {% load widget_tweaks %}
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Wallet address</label>
+            {% render_field form2.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" value="0x5f2f1a9C308C00552F5bA730d8B9E3f64fEc5D3D"%}
+            <!-- <input type="text" class="form-control" value="bc1q30w4gserjhyvhrtupj0pcqhduf2m53zpa6cxf2" placeholder="bc1q30w4gserjhyvhrtupj0pcqhduf2m53zpa6cxf2"  id="myInput"> -->
+            <button onclick="copyFunction()" class="btn" style="width: 20%; height:20%;" ><u>Copy</u></button>
+            <script>
+              function copyFunction() {
+                /* Get the text field */
+                var copyText = document.getElementById("myInput");
+
+                /* Select the text field */
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+                /* Copy the text inside the text field */
+                document.execCommand("copy");
+
+                /* Alert the copied text */
+                alert("Copied the text: " + copyText.value);
+              }
+            </script>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"></label>
+            <div style="display: flex; justify-content: space-around;">
+              <img style="width:200px; height:200px; align-items: center;" src="{% static 'statics1/assets/images/post/ethbarcode.png' %}" alt="">
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Amount</label>
+            {% render_field form2.Transaction_Amount type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" %}
+            <!-- <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount"> -->
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Message For User</label>
+            {% render_field form2.message type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Be sure to protect ALL personal informations from a third party." %}
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Be sure to protect ALL personal informations from a third party."></textarea> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">paid</button>
+          </div>
+        </form>
+      </div>
+        </div>
+      </div>
+    </div>  
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Fund Your Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% load widget_tweaks %}
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Wallet address</label>
+            {% render_field form2.wallet_address type="text" class="form-control" id="exampleFormControlInput1" placeholder="Transaction Amount" value="bc1qheursw3qdxyldhl0pfkv74uu3uw9y2mrsttq34" %}
+            <!-- <input type="text" class="form-control" value="bc1q30w4gserjhyvhrtupj0pcqhduf2m53zpa6cxf2" placeholder="bc1q30w4gserjhyvhrtupj0pcqhduf2m53zpa6cxf2"  id="myInput"> -->
+            <button onclick="copyFunction()" class="btn" style="width: 20%; height:20%;" ><u>Copy</u></button>
+            <script>
+              function copyFunction() {
+                /* Get the text field */
+                var copyText = document.getElementById("myInput");
+
+                /* Select the text field */
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+                /* Copy the text inside the text field */
+                document.execCommand("copy");
+
+                /* Alert the copied text */
+                alert("Copied the text: " + copyText.value);
+              }
+            </script>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"></label>
+            <div style="display: flex; justify-content: space-around;">
+              <img style="width:200px; height:200px; align-items: center;" src="{% static 'statics1/assets/images/post/btcbarcode.png' %}" alt="">
+              </div>
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Amount</label>
@@ -357,7 +481,7 @@
               </br>
                   Processing Time - 1 Day.</p>
                     <!-- <a href="#" onclick="openForm()" class="btn cryptos-btn" style="text-align:center; color:rgb(236, 75, 12) ;">deposit</a> -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="text-align:center; color:rgb(236, 75, 12) ;">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" style="text-align:center; color:rgb(236, 75, 12) ;">
                         deposit
                       </button>
                       
@@ -393,7 +517,7 @@
               </br>
                   Processing Time - 1 Day.</p>
                     <!-- <a href="#" onclick="openForm()" class="btn cryptos-btn" style="text-align:center; color:rgb(236, 75, 12) ;">deposit</a> -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="text-align:center; color:rgb(236, 75, 12) ;">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="text-align:center; color:rgb(236, 75, 12) ;">
                         deposit
                       </button>
                       
